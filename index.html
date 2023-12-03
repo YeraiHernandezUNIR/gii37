@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Ejercicio 1 - Estados de la petición AJAX</title>
+  <link rel="stylesheet" type="text/css" href="lab1_style.css">
+  <script type="text/javascript" src="code.js"></script>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:Order msdt:dt="string">966200.000000000</mso:Order>
+<mso:ContentTypeId msdt:dt="string">0x010100DF3D7C797EA12745A270EF30E38719B9</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+
+  <!--Contenedor toda la actividad-->
+  <div class="CONTENEDOR">
+
+   <!--Contenedor para el título de la actividad-->
+   <div>
+   <h1>Laboratorio: Tecnologías JavaScript y AJAX</h1>
+  </div>
+   <!--Fin contenedor para el título de la actividad--> 
+
+  <!--Contenedor para ejecución asociada a PALINDROMO-->
+  <div class="contenedoresjava">
+  <h2>Detectar si la cadena de entrada es un palíndromo</h2>
+  <input type="text" id="cadenaInput" placeholder="Ingresa una cadena"><br>
+  <button onclick="verificarPalindromo()">Verificar</button>
+  <p id="resultado"></p>
+
+  <script>
+      function verificarPalindromo() {
+          var cadena = document.getElementById('cadenaInput').value;
+          var esPalindromoResultado = esPalindromo(cadena);
+          document.getElementById('resultado').textContent = esPalindromoResultado ? "Enorabuena!, es un palíndromo" : "Que pena, no es un palíndromo";
+      }
+  </script>
+  <br>
+  </div>
+  <!--Fin contenedor para ejecución asociada a PALINDROMO-->
+
+  <!--Contenedor para ejecución comprar dos números y obtener mayor-->
+  <div class="contenedoresjava">
+    <h2>Detectar que número es mayor</h2>
+  <form action="#" id="compararNumerosForm">
+    <input type="number" id="numero1" placeholder="Ingresa el primer número">
+    <input type="number" id="numero2" placeholder="Ingresa el segundo número"><br>
+    <input type="button" value="Cuál es Mayor" onclick="mostrarMayor()">
+</form>
+<div id="resultadoComparacion"></div>
+
+<script>
+    function mostrarMayor() {
+        var num1 = document.getElementById('numero1').value;
+        var num2 = document.getElementById('numero2').value;
+        var resultado = mayorDeDosNumeros(num1, num2);
+        document.getElementById('resultadoComparacion').textContent = "El número mayor es: " + resultado;
+    }
+</script>
+<br>
+</div>
+  <!--Fin contenedor para ejecución comprar dos números y obtener mayor-->
+
+  <!--Contenedor para escribir las vocales que aparecen-->
+  <div class="contenedoresjava">
+    <h2>Detectar vocales de una palabra o frase</h2>
+    <form action="#" id="mostrarVocalesForm">
+      <input type="text" id="fraseInput1" placeholder="Ingresa una frase"><br>
+      <input type="button" value="Mostrar Vocales" onclick="listarVocales()">
+  </form>
+  <div id="resultadoVocales1"></div>
+
+  <script>
+      function listarVocales() {
+          var frase = document.getElementById('fraseInput1').value;
+          var vocales = mostrarVocales(frase);
+          document.getElementById('resultadoVocales1').textContent = "Vocales en la frase: " + vocales.join(', ');
+      }
+  </script>
+  <br>
+  </div>
+  <!--Fin Contenedor para escribir las vocales que aparecen-->
+
+  <!--Contenedor para contar las vocales que aparecen-->
+    <div class="contenedoresjava">
+      <h2>Contar vocales de una palabra o frase</h2>
+      <input type="text" id="fraseInput" placeholder="Introduce una frase"><br>
+      <button onclick="mostrarConteoVocales()">Contar Vocales</button>
+      <div id="resultadoVocales2"></div> 
+      <br>     
+    </div>
+  <!--Fin contenedor para contar las vocales que aparecen-->
+
+  <!--Contenedor general AJAX-->
+  <div>
+    <h2>Mostrar URL de navegación o introducir una nueva</h2>
+    <form action="#">
+      URL:
+      <input type="text" id="recurso" size="70" />
+      <input type="button" id="enviar" value="Mostrar contenidos"  onclick="mostrarContenidos()"/>
+    </form>
+
+  <div id="principal">
+    <h2>Contenidos del archivo:</h2>
+    <div id="contenidos"></div>
+
+    <h2>Cabeceras HTTP de la respuesta del servidor:</h2>
+    <div id="cabeceras"></div>
+  </div>
+
+  <div id="secundario">
+    <h2>Estados de la petición:</h2>
+    <div id="estados"></div>
+
+    <h2>Código de estado:</h2>
+    <div id="codigo"></div>
+  </div>
+  </div>
+  <!--Contenedor general AJAX-->
+
+</div>
+<!--Fin contenedor toda la actividad-->
+
+</body>
+</html>
